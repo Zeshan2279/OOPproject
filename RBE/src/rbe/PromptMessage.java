@@ -13,16 +13,18 @@ import javax.swing.JFrame;
  */
 public class PromptMessage extends javax.swing.JFrame {
 
-    JFrame frame;
+    JFrame frameSource;
+    JFrame frameOut;
     /**
      * 
      * @param str
      * @param j 
      */
-    public PromptMessage(String str,JFrame f) {
+    public PromptMessage(String str,JFrame f,JFrame f1) {
         initComponents();
         msgPrompt.setText(str);
-        frame=f;
+        frameSource=f;
+        frameOut=f1;
     }
 
     /**
@@ -203,9 +205,8 @@ public class PromptMessage extends javax.swing.JFrame {
 
     private void okPromptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okPromptActionPerformed
         this.setVisible(false);
-        frame.setVisible(false);
-        Main m=new Main();
-        m.setVisible(true);
+        frameSource.setVisible(false);
+        frameOut.setVisible(true);
     }//GEN-LAST:event_okPromptActionPerformed
 
     private void promptMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_promptMouseDragged

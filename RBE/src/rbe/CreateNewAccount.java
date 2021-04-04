@@ -320,7 +320,8 @@ public class CreateNewAccount extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel2MousePressed
 
     private void signUpCNAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpCNAActionPerformed
-        PromptMessage p=new PromptMessage("Successful! Account has been created.",this);
+        Main m=new Main();
+        PromptMessage p=new PromptMessage("Successful! Account has been created.",this,m);
         p.setVisible(true);
         
     }//GEN-LAST:event_signUpCNAActionPerformed
