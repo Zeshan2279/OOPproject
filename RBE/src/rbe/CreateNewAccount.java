@@ -50,7 +50,7 @@ public class CreateNewAccount extends javax.swing.JFrame {
         backCNA = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocationByPlatform(true);
+        setLocation(new java.awt.Point(400, 100));
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(16, 16, 16));

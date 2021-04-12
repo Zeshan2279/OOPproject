@@ -44,7 +44,7 @@ public class Login extends javax.swing.JFrame {
         backLogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocationByPlatform(true);
+        setLocation(new java.awt.Point(400, 100));
         setUndecorated(true);
         setResizable(false);
 

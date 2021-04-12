@@ -18,7 +18,8 @@ public class PromptMessage extends javax.swing.JFrame {
     /**
      * 
      * @param str
-     * @param j 
+     * @param f
+     * @param f1 
      */
     public PromptMessage(String str,JFrame f,JFrame f1) {
         initComponents();

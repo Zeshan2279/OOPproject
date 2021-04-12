@@ -38,6 +38,7 @@ public class Main extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(400, 100));
         setLocationByPlatform(true);
         setUndecorated(true);
 
@@ -97,8 +98,9 @@ public class Main extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel3))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,10 +192,6 @@ public class Main extends javax.swing.JFrame {
         c.setVisible(true);
     }//GEN-LAST:event_cnaActionPerformed
 
-    private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
-        System.exit(0);
-    }//GEN-LAST:event_jLabel3MousePressed
-
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
         // TODO add your handling code here:
         int x = evt.getXOnScreen();
@@ -224,6 +222,10 @@ public class Main extends javax.swing.JFrame {
         Login yd=new Login();
         yd.setVisible(true);
     }//GEN-LAST:event_signInActionPerformed
+
+    private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
+        System.exit(0);
+    }//GEN-LAST:event_jLabel3MousePressed
 
     
     

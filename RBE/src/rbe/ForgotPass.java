@@ -48,7 +48,7 @@ public class ForgotPass extends javax.swing.JFrame {
         jPasswordField2 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocationByPlatform(true);
+        setLocation(new java.awt.Point(400, 100));
         setUndecorated(true);
         setResizable(false);
 

@@ -41,7 +41,7 @@ public class ViewStudent extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocationByPlatform(true);
+        setLocation(new java.awt.Point(400, 100));
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(16, 16, 16));
