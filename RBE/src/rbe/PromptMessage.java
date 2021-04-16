@@ -6,6 +6,7 @@
 package rbe;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
@@ -13,19 +14,19 @@ import javax.swing.JFrame;
  */
 public class PromptMessage extends javax.swing.JFrame {
 
+    JPanel panelSource;
     JFrame frameSource;
-    JFrame frameOut;
     /**
      * 
      * @param str
      * @param f
      * @param f1 
      */
-    public PromptMessage(String str,JFrame f,JFrame f1) {
+    public PromptMessage(String str,JFrame f,JPanel jp) {
         initComponents();
         msgPrompt.setText(str);
         frameSource=f;
-        frameOut=f1;
+        panelSource=jp;
     }
 
     /**
@@ -37,21 +38,22 @@ public class PromptMessage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         prompt = new javax.swing.JPanel();
-        prompt2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        okPrompt = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         msgPrompt = new javax.swing.JLabel();
+        createAccBtn = new javax.swing.JButton();
+        kGradientPanel1 = new keeptoo.KGradientPanel();
+        jLabel3 = new javax.swing.JLabel();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
 
-        prompt.setBackground(new java.awt.Color(16, 16, 16));
+        prompt.setBackground(new java.awt.Color(50, 46, 47));
         prompt.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 promptMouseDragged(evt);
@@ -60,66 +62,6 @@ public class PromptMessage extends javax.swing.JFrame {
         prompt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 promptMousePressed(evt);
-            }
-        });
-
-        prompt2.setBackground(new java.awt.Color(243, 202, 32));
-        prompt2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                prompt2MouseDragged(evt);
-            }
-        });
-        prompt2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                prompt2MousePressed(evt);
-            }
-        });
-
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_close_window_40px_1.png"))); // NOI18N
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel3MousePressed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("RBE");
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_student_male_40px.png"))); // NOI18N
-
-        javax.swing.GroupLayout prompt2Layout = new javax.swing.GroupLayout(prompt2);
-        prompt2.setLayout(prompt2Layout);
-        prompt2Layout.setHorizontalGroup(
-            prompt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, prompt2Layout.createSequentialGroup()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addContainerGap())
-        );
-        prompt2Layout.setVerticalGroup(
-            prompt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(prompt2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(prompt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel1))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        okPrompt.setBackground(new java.awt.Color(243, 202, 32));
-        okPrompt.setFont(new java.awt.Font("Century Gothic", 1, 17)); // NOI18N
-        okPrompt.setText("OK");
-        okPrompt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        okPrompt.setFocusPainted(false);
-        okPrompt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okPromptActionPerformed(evt);
             }
         });
 
@@ -133,56 +75,116 @@ public class PromptMessage extends javax.swing.JFrame {
         msgPrompt.setBackground(new java.awt.Color(16, 16, 16));
         msgPrompt.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         msgPrompt.setForeground(new java.awt.Color(255, 255, 255));
+        msgPrompt.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                msgPromptMouseDragged(evt);
+            }
+        });
+        msgPrompt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                msgPromptMousePressed(evt);
+            }
+        });
+
+        createAccBtn.setBackground(new java.awt.Color(133, 1, 0));
+        createAccBtn.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        createAccBtn.setForeground(new java.awt.Color(255, 255, 255));
+        createAccBtn.setText("OK");
+        createAccBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        createAccBtn.setBorderPainted(false);
+        createAccBtn.setFocusPainted(false);
+        createAccBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createAccBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout promptLayout = new javax.swing.GroupLayout(prompt);
         prompt.setLayout(promptLayout);
         promptLayout.setHorizontalGroup(
             promptLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(prompt2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(promptLayout.createSequentialGroup()
+                .addGap(135, 135, 135)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(177, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, promptLayout.createSequentialGroup()
                 .addGroup(promptLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, promptLayout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, promptLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(msgPrompt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(promptLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(okPrompt, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(createAccBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(promptLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(msgPrompt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(25, 25, 25))
         );
         promptLayout.setVerticalGroup(
             promptLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(promptLayout.createSequentialGroup()
-                .addComponent(prompt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(promptLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(promptLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                        .addComponent(msgPrompt, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, Short.MAX_VALUE))
-                    .addGroup(promptLayout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(promptLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(okPrompt, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addComponent(msgPrompt, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(createAccBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
+        );
+
+        kGradientPanel1.setkEndColor(new java.awt.Color(173, 181, 189));
+        kGradientPanel1.setkStartColor(new java.awt.Color(5, 81, 96));
+        kGradientPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                kGradientPanel1MouseDragged(evt);
+            }
+        });
+        kGradientPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                kGradientPanel1MousePressed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_close_window_40px_1.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel3MousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
+        kGradientPanel1.setLayout(kGradientPanel1Layout);
+        kGradientPanel1Layout.setHorizontalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addContainerGap())
+        );
+        kGradientPanel1Layout.setVerticalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel3)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(prompt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(prompt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(prompt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -191,24 +193,6 @@ public class PromptMessage extends javax.swing.JFrame {
     private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
         System.exit(0);
     }//GEN-LAST:event_jLabel3MousePressed
-
-    private void prompt2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prompt2MouseDragged
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
-
-        this.setLocation(x - xMouse, y - yMouse);
-    }//GEN-LAST:event_prompt2MouseDragged
-
-    private void prompt2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prompt2MousePressed
-        xMouse = evt.getX();
-        yMouse = evt.getY();
-    }//GEN-LAST:event_prompt2MousePressed
-
-    private void okPromptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okPromptActionPerformed
-        this.setVisible(false);
-        frameSource.setVisible(false);
-        frameOut.setVisible(true);
-    }//GEN-LAST:event_okPromptActionPerformed
 
     private void promptMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_promptMouseDragged
         // TODO add your handling code here:
@@ -223,18 +207,56 @@ public class PromptMessage extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_promptMousePressed
 
+    private void createAccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccBtnActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        gotoP(panelSource);
+        
+    }//GEN-LAST:event_createAccBtnActionPerformed
+
+    private void kGradientPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel1MousePressed
+        // TODO add your handling code here:
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_kGradientPanel1MousePressed
+
+    private void msgPromptMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_msgPromptMousePressed
+        // TODO add your handling code here:xMouse = evt.getX();
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_msgPromptMousePressed
+
+    private void kGradientPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel1MouseDragged
+        // TODO add your handling code here:
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_kGradientPanel1MouseDragged
+
+    private void msgPromptMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_msgPromptMouseDragged
+        // TODO add your handling code here:
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_msgPromptMouseDragged
+
+    public void gotoP(JPanel mp) {
+        frameSource.setContentPane(mp);
+        frameSource.revalidate();
+        frameSource.repaint();
+        this.setVisible(false);
+    }
     int xMouse;
     int yMouse;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton createAccBtn;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JSeparator jSeparator1;
+    private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel msgPrompt;
-    private javax.swing.JButton okPrompt;
     private javax.swing.JPanel prompt;
-    private javax.swing.JPanel prompt2;
     // End of variables declaration//GEN-END:variables
 }

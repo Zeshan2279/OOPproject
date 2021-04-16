@@ -1222,7 +1222,7 @@ public class Dashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void signOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signOutActionPerformed
-        Main m=new Main();
+        Loading m=new Loading();
         PromptMessage pm=new PromptMessage("Your Account has been successfully Signed Out!", this, m);
         pm.setVisible(true);
     }//GEN-LAST:event_signOutActionPerformed
