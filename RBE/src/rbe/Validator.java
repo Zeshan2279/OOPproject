@@ -38,6 +38,23 @@ public class Validator {
         return false;
     }
 
+    public boolean isValidPwd(String str) {
+        int len = str.length();
+        if (len > 1) {
+            for (int i = 0; i < len; i++) {
+                if (!(str.charAt(i) >= 'A' && str.charAt(i) <= 'Z')) {
+                    if (!(str.charAt(i) >= 'a' && str.charAt(i) <= 'z')) {
+                        if (!(str.charAt(i) >= '0' && str.charAt(i) <= '9')) {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
     public boolean isValidEmail(String EmailID) {
         if (EmailID.contains("@")) {
             for (int i = 0; i < EmailID.length(); i++) {
@@ -70,7 +87,7 @@ public class Validator {
                         }
                     }
                 } else {
-                    if (reg.charAt(i)!='-') {
+                    if (reg.charAt(i) != '-') {
                         return false;
                     }
                 }
@@ -80,19 +97,45 @@ public class Validator {
             return false;
         }
     }
-    
-    public boolean isValidContPhone(String num){
-        if(num.length()==11){
-            for(int i=0; i< 11;i++)
-            {
-                if(!(num.charAt(i)>='0'&&num.charAt(i)<='9')){
+
+    public boolean isValidContPhone(String num) {
+        if (num.length() == 11) {
+            for (int i = 0; i < 11; i++) {
+                if (!(num.charAt(i) >= '0' && num.charAt(i) <= '9')) {
                     return false;
                 }
             }
             return true;
-        }else{
+        } else {
             return false;
         }
     }
-    
+
+    public boolean isValidSem(int sem) {
+        if (sem > 0 && sem < 9) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean isValidCrsCode(String code) {
+        if (code.length() == 5 || code.length() == 6) {
+            for (int i = 0; i < code.length(); i++) {
+                if (i > 1 && i < 5) {
+                    if (!(code.charAt(i) >= '0' && code.charAt(i) <= '9')) {
+                        return false;
+                    }
+                } else {
+                    if (!(code.charAt(i) >= 'A' && code.charAt(i) <= 'Z')) {
+                        return false;
+                    }
+
+                }
+
+            }
+            return true;
+        }
+        return false;
+    }
 }

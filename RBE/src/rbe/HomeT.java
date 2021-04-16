@@ -467,7 +467,7 @@ public class HomeT extends javax.swing.JPanel {
 
     private void jLabel7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MousePressed
         // TODO add your handling code here:
-        gotoP(new CoursesPanel(J, this, "Teacher"));
+        gotoP(new CoursesPanel(J, this, "Teacher",RBE.getInstance().getCrsList()));
     }//GEN-LAST:event_jLabel7MousePressed
 
     public String getType(){

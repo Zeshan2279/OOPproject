@@ -6,6 +6,7 @@
 package rbe;
 
 import java.awt.Dimension;
+import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -375,7 +376,9 @@ public class HomeSt extends javax.swing.JPanel {
 
     private void jLabel7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MousePressed
         // TODO add your handling code here:
-        gotoP(new CoursesPanel(J, this,"Student"));
+        EnrolledSt e= (EnrolledSt)RBE.getInstance().getPersonList().get(userIndex);
+        List<Course> l= e.getCourseList();
+        gotoP(new CoursesPanel(J, this,"Student",l));
     }//GEN-LAST:event_jLabel7MousePressed
     
     public String getType(){

@@ -12,22 +12,28 @@ public class RBE {
     private static RBE r;
     private RBE(){
         personList=new ArrayList<Person>();
+        crsList=new ArrayList<Course>();
     }
     public static RBE getInstance(){
         if(r==null){
            r=new RBE();
-           
         }
         return r;
     }
     private List<Person> personList;
+    private List<Course> crsList;
     
     public List<Person> getPersonList(){
         return personList;
     }
-    
+    public List<Course> getCrsList(){
+        return crsList;
+    }
     public void addtoList(Person p){
         personList.add(p);
+    }
+    public void addtoCrsList(Course p){
+        crsList.add(p);
     }
     public void setAtIndList(int i,Person p){
         personList.set(i,p);
@@ -52,6 +58,19 @@ public class RBE {
         {
             if(personList.get(i).getType().equals("Teacher")){
                 Teacher std=(Teacher) personList.get(i);
+                tList.add(std);
+            }
+        }
+        
+        return tList;
+    }
+    public List<EnrolledSt> getEnrolledList(){
+        List<EnrolledSt> tList= new ArrayList<EnrolledSt>();
+        
+        for(int i=0; i< personList.size();i++)
+        {
+            if(personList.get(i).getType().equals("Enrolled")){
+                EnrolledSt std=(EnrolledSt) personList.get(i);
                 tList.add(std);
             }
         }

@@ -6,8 +6,10 @@
 package rbe;
 
 import java.awt.Dimension;
+import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,20 +20,26 @@ public class CoursesPanel extends javax.swing.JPanel {
     /**
      * Creates new form Courses
      */
-    public CoursesPanel(JFrame j, JPanel jp, String s) {
+    public CoursesPanel(JFrame j, JPanel jp, String s, List<Course> list) {
         initComponents();
         J = j;
         Jp = jp;
         dj = j.getPreferredSize();
         userType = s;
-        
+
         if (userType.equals("Student")) {
-            courseSemCombo.setVisible(true);
             courseNameCombo.setVisible(true);
+            courseNameBox.setVisible(false);
+            submitBtn.setText("Register");
+            jTable1.setToolTipText("Displays, Registered Courses!");
         } else {
-            courseSemBox.setVisible(true);
+            courseNameCombo.setVisible(false);
             courseNameBox.setVisible(true);
+            submitBtn.setText("Add");
+            jTable1.setToolTipText("Displays, All Added Courses!");
         }
+        
+        viewTable(list);
     }
 
     /**
@@ -43,6 +51,7 @@ public class CoursesPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         titleBar2 = new keeptoo.KGradientPanel();
         close2 = new javax.swing.JLabel();
         maxi2 = new javax.swing.JLabel();
@@ -59,7 +68,12 @@ public class CoursesPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         courseNameBox = new javax.swing.JTextField();
-        courseSemBox = new javax.swing.JTextField();
+        backBtn = new javax.swing.JButton();
+        submitBtn = new javax.swing.JButton();
+        crsSemErr = new javax.swing.JLabel();
+        crsCourseErr = new javax.swing.JLabel();
+
+        jButton1.setText("jButton1");
 
         titleBar2.setkEndColor(new java.awt.Color(108, 117, 125));
         titleBar2.setkStartColor(new java.awt.Color(33, 37, 41));
@@ -146,23 +160,16 @@ public class CoursesPanel extends javax.swing.JPanel {
 
         kGradientPanel5.setkEndColor(new java.awt.Color(176, 42, 55));
         kGradientPanel5.setkStartColor(new java.awt.Color(253, 126, 20));
-        kGradientPanel5.setLayout(null);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_study_100px.png"))); // NOI18N
-        kGradientPanel5.add(jLabel1);
-        jLabel1.setBounds(17, 6, 100, 128);
 
         jLabel28.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("Semester");
-        kGradientPanel5.add(jLabel28);
-        jLabel28.setBounds(205, 98, 81, 29);
 
         jLabel29.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("Course");
-        kGradientPanel5.add(jLabel29);
-        jLabel29.setBounds(205, 165, 81, 29);
 
         backBtn2.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         backBtn2.setText("Back");
@@ -173,43 +180,134 @@ public class CoursesPanel extends javax.swing.JPanel {
                 backBtn2ActionPerformed(evt);
             }
         });
-        kGradientPanel5.add(backBtn2);
-        backBtn2.setBounds(17, 626, 76, 28);
 
         courseSemCombo.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
-        courseSemCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fall 2020", "Spring 2021" }));
-        kGradientPanel5.add(courseSemCombo);
-        courseSemCombo.setBounds(330, 100, 218, 38);
+        courseSemCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8" }));
+        courseSemCombo.setToolTipText("semester");
 
         courseNameCombo.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
         courseNameCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CS142 OOP", "CS100L OOP" }));
-        kGradientPanel5.add(courseNameCombo);
-        courseNameCombo.setBounds(330, 160, 218, 38);
+        courseNameCombo.setToolTipText("course");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Sr.", "Course Code", "Course Name", "Semester"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true
+            };
 
-        kGradientPanel5.add(jScrollPane1);
-        jScrollPane1.setBounds(160, 240, 490, 230);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.setToolTipText("");
+        jTable1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jTable1);
 
         courseNameBox.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
         courseNameBox.setToolTipText("Enter course code and course name separated by space");
-        kGradientPanel5.add(courseNameBox);
-        courseNameBox.setBounds(330, 160, 218, 38);
 
-        courseSemBox.setPreferredSize(new java.awt.Dimension(64, 29));
-        kGradientPanel5.add(courseSemBox);
-        courseSemBox.setBounds(330, 100, 218, 38);
+        backBtn.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        backBtn.setText("Back");
+        backBtn.setBorderPainted(false);
+        backBtn.setFocusPainted(false);
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+
+        submitBtn.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        submitBtn.setText("Add");
+        submitBtn.setBorderPainted(false);
+        submitBtn.setFocusPainted(false);
+        submitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitBtnActionPerformed(evt);
+            }
+        });
+
+        crsSemErr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_cancel_40px.png"))); // NOI18N
+
+        crsCourseErr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_cancel_40px.png"))); // NOI18N
+
+        javax.swing.GroupLayout kGradientPanel5Layout = new javax.swing.GroupLayout(kGradientPanel5);
+        kGradientPanel5.setLayout(kGradientPanel5Layout);
+        kGradientPanel5Layout.setHorizontalGroup(
+            kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel5Layout.createSequentialGroup()
+                .addGroup(kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(kGradientPanel5Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(backBtn2))
+                    .addGroup(kGradientPanel5Layout.createSequentialGroup()
+                        .addGap(189, 189, 189)
+                        .addComponent(jScrollPane1)
+                        .addGap(94, 94, 94))
+                    .addGroup(kGradientPanel5Layout.createSequentialGroup()
+                        .addGroup(kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(kGradientPanel5Layout.createSequentialGroup()
+                                .addGap(205, 205, 205)
+                                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(kGradientPanel5Layout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addGroup(kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(backBtn)
+                                    .addComponent(jLabel1))
+                                .addGap(88, 88, 88)
+                                .addComponent(jLabel28)))
+                        .addGap(35, 35, 35)
+                        .addGroup(kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(kGradientPanel5Layout.createSequentialGroup()
+                                .addComponent(courseSemCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(courseNameCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(courseNameBox))
+                        .addGap(29, 29, 29)
+                        .addGroup(kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(kGradientPanel5Layout.createSequentialGroup()
+                                .addComponent(crsSemErr, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(submitBtn))
+                            .addComponent(crsCourseErr, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(195, 195, 195))
+        );
+        kGradientPanel5Layout.setVerticalGroup(
+            kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel5Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addGroup(kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(kGradientPanel5Layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addGroup(kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(crsSemErr, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(courseSemCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(courseNameCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(submitBtn)))))
+                .addGroup(kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(kGradientPanel5Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(courseNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(kGradientPanel5Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(crsCourseErr, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(50, 50, 50)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(backBtn)
+                .addGap(88, 88, 88)
+                .addComponent(backBtn2))
+        );
 
         javax.swing.GroupLayout kGradientPanel3Layout = new javax.swing.GroupLayout(kGradientPanel3);
         kGradientPanel3.setLayout(kGradientPanel3Layout);
@@ -233,7 +331,7 @@ public class CoursesPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(titleBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(kGradientPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 893, Short.MAX_VALUE)
+            .addComponent(kGradientPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,6 +393,35 @@ public class CoursesPanel extends javax.swing.JPanel {
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_kGradientPanel3MousePressed
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // TODO add your handling code here:
+        gotoP(new SignInPanel(J));
+    }//GEN-LAST:event_backBtnActionPerformed
+
+
+    private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
+        // TODO add your handling code here:
+        int sem=courseSemCombo.getSelectedIndex()+1;
+        String crs=courseNameBox.getText();
+        String[] crsArr=crs.split("\\s");
+        
+        
+    }//GEN-LAST:event_submitBtnActionPerformed
+
+    private void viewTable(List<Course> list) {
+        tbMod = (DefaultTableModel) jTable1.getModel();
+        tbMod.setRowCount(0);
+        Object[] obj = new Object[4];
+        for (int i = 0; i < list.size(); i++) {
+            obj[0] = i + 1 + "";
+            obj[1] = list.get(i).getCrsCode();
+            obj[2] = list.get(i).getCrsName();
+            obj[3] = list.get(i).getSemester();
+            tbMod.addRow(obj);
+        }
+    }
+
     public void gotoP(JPanel mp) {
         J.setContentPane(mp);
         J.revalidate();
@@ -303,18 +430,22 @@ public class CoursesPanel extends javax.swing.JPanel {
     int xMouse;
     int yMouse;
 
+    DefaultTableModel tbMod;
     JFrame J;
     JPanel Jp;
     Dimension dj;
     String userType;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backBtn;
     private javax.swing.JButton backBtn2;
     private javax.swing.JLabel close2;
     private javax.swing.JTextField courseNameBox;
     private javax.swing.JComboBox<String> courseNameCombo;
-    private javax.swing.JTextField courseSemBox;
     private javax.swing.JComboBox<String> courseSemCombo;
+    private javax.swing.JLabel crsCourseErr;
+    private javax.swing.JLabel crsSemErr;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel28;
@@ -325,6 +456,7 @@ public class CoursesPanel extends javax.swing.JPanel {
     private keeptoo.KGradientPanel kGradientPanel5;
     private javax.swing.JLabel maxi2;
     private javax.swing.JLabel mini2;
+    private javax.swing.JButton submitBtn;
     private keeptoo.KGradientPanel titleBar2;
     // End of variables declaration//GEN-END:variables
 }
