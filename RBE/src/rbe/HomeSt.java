@@ -23,7 +23,7 @@ public class HomeSt extends javax.swing.JPanel {
         initComponents();
         J = j;
         dj = j.getPreferredSize();
-        userIndex=n;
+        userIndex = n;
     }
 
     /**
@@ -357,10 +357,12 @@ public class HomeSt extends javax.swing.JPanel {
 
     private void kGradientPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel1MouseDragged
         // TODO add your handling code here:
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
+        if (J.getExtendedState() != J.MAXIMIZED_BOTH) {
+            int x = evt.getXOnScreen();
+            int y = evt.getYOnScreen();
 
-        J.setLocation(x - xMouse, y - yMouse);
+            J.setLocation(x - xMouse, y - yMouse);
+        }
     }//GEN-LAST:event_kGradientPanel1MouseDragged
 
     private void kGradientPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel1MousePressed
@@ -371,19 +373,20 @@ public class HomeSt extends javax.swing.JPanel {
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
         // TODO add your handling code here:
-        gotoP(new Profile(J, this,userIndex));
+        gotoP(new Profile(J, this, userIndex));
     }//GEN-LAST:event_jLabel1MousePressed
 
     private void jLabel7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MousePressed
         // TODO add your handling code here:
-        EnrolledSt e= (EnrolledSt)RBE.getInstance().getPersonList().get(userIndex);
-        List<Course> l= e.getCourseList();
-        gotoP(new CoursesPanel(J, this,"Student",l));
+        Student e = (Student) RBE.getInstance().getPersonList().get(userIndex);
+        List<Course> l = e.getCourseList();
+        gotoP(new CoursesPanel(J, this, userIndex, l));
     }//GEN-LAST:event_jLabel7MousePressed
-    
-    public String getType(){
+
+    public String getType() {
         return "Student";
     }
+
     public void gotoP(JPanel mp) {
         J.setContentPane(mp);
         J.revalidate();

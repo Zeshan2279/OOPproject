@@ -22,7 +22,7 @@ public class HomeT extends javax.swing.JPanel {
         initComponents();
         J = j;
         dj = j.getPreferredSize();
-        userIndex=n;
+        userIndex = n;
     }
 
     /**
@@ -143,11 +143,11 @@ public class HomeT extends javax.swing.JPanel {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Teacher");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridx = 9;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.ipady = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(30, 6, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(47, 6, 0, 0);
         kGradientPanel4.add(jLabel11, gridBagConstraints);
 
         jLabel12.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
@@ -156,46 +156,44 @@ public class HomeT extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.gridheight = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(9, 63, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(9, 123, 0, 0);
         kGradientPanel4.add(jLabel12, gridBagConstraints);
 
         jLabel13.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_teacher_100px.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 4, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(23, 82, 0, 0);
         kGradientPanel4.add(jLabel13, gridBagConstraints);
 
         jLabel14.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Students");
+        jLabel14.setText("Add Students");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.ipady = 7;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 29, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 58, 0, 0);
         kGradientPanel4.add(jLabel14, gridBagConstraints);
 
         jLabel15.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Assessments");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridx = 9;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(3, 6, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(3, 18, 0, 0);
         kGradientPanel4.add(jLabel15, gridBagConstraints);
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_male_user_100px.png"))); // NOI18N
@@ -207,11 +205,11 @@ public class HomeT extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridwidth = 4;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipady = -3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(36, 41, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(46, 101, 0, 0);
         kGradientPanel4.add(jLabel16, gridBagConstraints);
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_read_online_100px.png"))); // NOI18N
@@ -221,43 +219,43 @@ public class HomeT extends javax.swing.JPanel {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(33, 12, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(43, 12, 0, 0);
         kGradientPanel4.add(jLabel17, gridBagConstraints);
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_inspection_100px.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridx = 9;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.ipadx = -5;
         gridBagConstraints.ipady = -3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(33, 6, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(43, 18, 0, 0);
         kGradientPanel4.add(jLabel18, gridBagConstraints);
 
         jLabel19.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Result");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 16;
+        gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(3, 67, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(3, 65, 0, 0);
         kGradientPanel4.add(jLabel19, gridBagConstraints);
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_exam_100px_2.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 16;
+        gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.ipady = -8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(38, 44, 0, 36);
+        gridBagConstraints.insets = new java.awt.Insets(48, 44, 0, 61);
         kGradientPanel4.add(jLabel20, gridBagConstraints);
 
         jLabel21.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
@@ -266,56 +264,56 @@ public class HomeT extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 11;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.ipady = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 55, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(2, 115, 28, 0);
         kGradientPanel4.add(jLabel21, gridBagConstraints);
 
         jLabel22.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("CLO");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 11;
         gridBagConstraints.ipady = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 49, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(2, 49, 28, 0);
         kGradientPanel4.add(jLabel22, gridBagConstraints);
 
         jLabel23.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("Rubrics");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridx = 9;
         gridBagConstraints.gridy = 11;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.ipady = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 30, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(2, 42, 28, 0);
         kGradientPanel4.add(jLabel23, gridBagConstraints);
 
         jLabel26.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel26.setText("LogOut");
+        jLabel26.setText("Logout");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 16;
+        gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 11;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.ipady = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 66, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(2, 67, 28, 0);
         kGradientPanel4.add(jLabel26, gridBagConstraints);
 
         jLabel1.setToolTipText("");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 7;
         gridBagConstraints.gridheight = 4;
         gridBagConstraints.ipadx = 49;
         gridBagConstraints.ipady = 100;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(66, 11, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(70, 11, 0, 0);
         kGradientPanel4.add(jLabel1, gridBagConstraints);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_study_100px.png"))); // NOI18N
@@ -327,32 +325,42 @@ public class HomeT extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.gridheight = 3;
         gridBagConstraints.ipadx = -7;
         gridBagConstraints.ipady = -9;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(71, 41, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(75, 101, 0, 0);
         kGradientPanel4.add(jLabel7, gridBagConstraints);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_brick_100px.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel2MousePressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(66, 12, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(70, 12, 0, 0);
         kGradientPanel4.add(jLabel2, gridBagConstraints);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_abacus_100px.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel3MousePressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridx = 9;
         gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.ipady = -16;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(66, 12, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(70, 24, 0, 0);
         kGradientPanel4.add(jLabel3, gridBagConstraints);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_logout_rounded_left_100px.png"))); // NOI18N
@@ -362,13 +370,13 @@ public class HomeT extends javax.swing.JPanel {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 16;
+        gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipady = -10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(66, 44, 0, 36);
+        gridBagConstraints.insets = new java.awt.Insets(70, 44, 0, 61);
         kGradientPanel4.add(jLabel4, gridBagConstraints);
 
         javax.swing.GroupLayout kGradientPanel3Layout = new javax.swing.GroupLayout(kGradientPanel3);
@@ -376,16 +384,16 @@ public class HomeT extends javax.swing.JPanel {
         kGradientPanel3Layout.setHorizontalGroup(
             kGradientPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel3Layout.createSequentialGroup()
-                .addGap(80, 80, 80)
+                .addGap(37, 37, 37)
                 .addComponent(kGradientPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(86, 86, 86))
+                .addGap(49, 49, 49))
         );
         kGradientPanel3Layout.setVerticalGroup(
             kGradientPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel3Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(34, 34, 34)
                 .addComponent(kGradientPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(53, 53, 53))
+                .addGap(17, 17, 17))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -438,10 +446,12 @@ public class HomeT extends javax.swing.JPanel {
 
     private void kGradientPanel3MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel3MouseDragged
         // TODO add your handling code here:
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
+        if (J.getExtendedState() != J.MAXIMIZED_BOTH) {
+            int x = evt.getXOnScreen();
+            int y = evt.getYOnScreen();
 
-        J.setLocation(x - xMouse, y - yMouse);
+            J.setLocation(x - xMouse, y - yMouse);
+        }
     }//GEN-LAST:event_kGradientPanel3MouseDragged
 
     private void kGradientPanel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel3MousePressed
@@ -452,7 +462,7 @@ public class HomeT extends javax.swing.JPanel {
 
     private void jLabel16MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MousePressed
         // TODO add your handling code here:
-        gotoP(new Profile(J, this,userIndex));
+        gotoP(new Profile(J, this, userIndex));
     }//GEN-LAST:event_jLabel16MousePressed
 
     private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
@@ -462,18 +472,24 @@ public class HomeT extends javax.swing.JPanel {
 
     private void jLabel17MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MousePressed
         // TODO add your handling code here:
-        gotoP(new CreateAccount(J,this ,"Student"));
+        gotoP(new CreateAccount(J, this, "Student"));
     }//GEN-LAST:event_jLabel17MousePressed
 
     private void jLabel7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MousePressed
         // TODO add your handling code here:
-        gotoP(new CoursesPanel(J, this, "Teacher",RBE.getInstance().getCrsList()));
+        gotoP(new CoursesPanel(J, this, userIndex, RBE.getInstance().getCrsList()));
     }//GEN-LAST:event_jLabel7MousePressed
 
-    public String getType(){
-        return "Student";
-    }
-    
+    private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
+        // TODO add your handling code here:
+        gotoP(new CLOPanel(J, this));
+    }//GEN-LAST:event_jLabel2MousePressed
+
+    private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
+        // TODO add your handling code here:
+        gotoP(new RubricPanel(J, this));
+    }//GEN-LAST:event_jLabel3MousePressed
+
     public void gotoP(JPanel mp) {
         J.setContentPane(mp);
         J.revalidate();

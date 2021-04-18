@@ -386,10 +386,12 @@ public class Profile extends javax.swing.JPanel {
 
     private void kGradientPanel3MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel3MouseDragged
         // TODO add your handling code here:
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
+        if (J.getExtendedState() != J.MAXIMIZED_BOTH) {
+            int x = evt.getXOnScreen();
+            int y = evt.getYOnScreen();
 
-        J.setLocation(x - xMouse, y - yMouse);
+            J.setLocation(x - xMouse, y - yMouse);
+        }
     }//GEN-LAST:event_kGradientPanel3MouseDragged
 
     private void kGradientPanel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel3MousePressed
@@ -465,7 +467,7 @@ public class Profile extends javax.swing.JPanel {
         } else {
             profContPhErr.setVisible(true);
         }
-        if (Validator.getInstance().isValidStr(pass)) {
+        if (Validator.getInstance().isValidPwd(pass)) {
             profPassErr.setVisible(false);
             count++;
         } else {

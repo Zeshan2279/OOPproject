@@ -5,6 +5,7 @@
  */
 package rbe;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,6 +16,13 @@ public class CLOs {
     private String cloName;
     private String description;
     private List<Rubric> rubricList;
+
+    public CLOs() {
+        if(rubricList==null){
+            rubricList=new ArrayList<Rubric>();
+        }
+    }
+    
     
     //getter
     public String getCloName(){

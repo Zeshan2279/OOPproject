@@ -309,15 +309,17 @@ public class SignInPanel extends javax.swing.JPanel {
 
     private void createAccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccBtnActionPerformed
         // TODO add your handling code here:
-        gotoP(new CreateAccount(J,this,"Teacher"));
+        gotoP(new CreateAccount(J, this, "Teacher"));
     }//GEN-LAST:event_createAccBtnActionPerformed
 
     private void kGradientPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel1MouseDragged
         // TODO add your handling code here:
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
+        if (J.getExtendedState() != J.MAXIMIZED_BOTH) {
+            int x = evt.getXOnScreen();
+            int y = evt.getYOnScreen();
 
-        J.setLocation(x - xMouse, y - yMouse);
+            J.setLocation(x - xMouse, y - yMouse);
+        }
     }//GEN-LAST:event_kGradientPanel1MouseDragged
 
     private void kGradientPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel1MousePressed
@@ -344,12 +346,12 @@ public class SignInPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         String user = userTextBox.getText();
         String pwd = new String(userPassBox.getPassword());
-        userIndex=RBE.getInstance().searchPersonAccount(user, pwd);
-        Person p=RBE.getInstance().getPersonList().get(userIndex);
+        userIndex = RBE.getInstance().searchPersonAccount(user, pwd);
+        Person p = RBE.getInstance().getPersonList().get(userIndex);
         if (p.getType().equals("Student")) {
-            gotoP(new HomeSt(J,userIndex));
+            gotoP(new HomeSt(J, userIndex));
         } else if (p.getType().equals("Teacher")) {
-            gotoP(new HomeT(J,userIndex));
+            gotoP(new HomeT(J, userIndex));
         } else {
             new PromptMessage("Invalid Credentials! Try Again", J, this).setVisible(true);
         }

@@ -14,18 +14,22 @@ public class CreateAccount extends javax.swing.JPanel {
     /**
      * Creates new form CreateAccount
      */
-    public CreateAccount(JFrame j,JPanel jp ,String type) {
+    public CreateAccount(JFrame j, JPanel jp, String type) {
         initComponents();
         J = j;
-        Jp=jp;
+        Jp = jp;
         userType = type;
         hideErrIcon();
         if (userType.equals("Teacher")) {
             jLabel7.setVisible(false);
             creatDOBChoose.setVisible(false);
+            jLabel6.setText("Contact Phone");
+            jLabel8.setVisible(false);
+            createSemCombo.setVisible(false);
         } else {
-            jLabel7.setVisible(true);
-            creatDOBChoose.setVisible(true);
+//            jLabel7.setVisible(true);
+            jLabel6.setText("Reg No");
+//            creatDOBChoose.setVisible(true);
         }
     }
 
@@ -66,6 +70,9 @@ public class CreateAccount extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         creatDOBChoose = new com.toedter.calendar.JDateChooser();
         creatDobErr = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        creatSemErr = new javax.swing.JLabel();
+        createSemCombo = new javax.swing.JComboBox<>();
 
         titleBar.setkEndColor(new java.awt.Color(108, 117, 125));
         titleBar.setkStartColor(new java.awt.Color(33, 37, 41));
@@ -108,6 +115,11 @@ public class CreateAccount extends javax.swing.JPanel {
         kGradientPanel1.setkEndColor(new java.awt.Color(29, 9, 4));
         kGradientPanel1.setkStartColor(new java.awt.Color(133, 1, 0));
         kGradientPanel1.setPreferredSize(new java.awt.Dimension(886, 730));
+        kGradientPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                kGradientPanel1MouseDragged(evt);
+            }
+        });
 
         kGradientPanel2.setkEndColor(new java.awt.Color(176, 42, 55));
         kGradientPanel2.setkStartColor(new java.awt.Color(253, 126, 20));
@@ -124,7 +136,7 @@ public class CreateAccount extends javax.swing.JPanel {
 
         createNameBox.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
 
-        createShowPas.setBackground(new java.awt.Color(218, 89, 34));
+        createShowPas.setBackground(getForeground());
         createShowPas.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         createShowPas.setForeground(new java.awt.Color(255, 255, 255));
         createShowPas.setText("Show Password");
@@ -188,6 +200,14 @@ public class CreateAccount extends javax.swing.JPanel {
 
         creatDobErr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_cancel_40px.png"))); // NOI18N
 
+        jLabel8.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Semester");
+
+        creatSemErr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rbe/img/icons8_cancel_40px.png"))); // NOI18N
+
+        createSemCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8" }));
+
         javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);
         kGradientPanel2.setLayout(kGradientPanel2Layout);
         kGradientPanel2Layout.setHorizontalGroup(
@@ -196,24 +216,19 @@ public class CreateAccount extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(55, 55, 55)
                 .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(77, 77, 77))
-                    .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
+                        .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(45, 45, 45))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(77, 77, 77))
-                    .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(3, 3, 3))
-                    .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                        .addGap(45, 45, 45)))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0)
                 .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(createSemCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(creatDOBChoose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(createPassBox)
                     .addComponent(createNameBox)
@@ -228,14 +243,15 @@ public class CreateAccount extends javax.swing.JPanel {
                     .addComponent(creatEmailErr)
                     .addComponent(creatContPErr)
                     .addComponent(creatPassErr)
-                    .addComponent(creatDobErr))
+                    .addComponent(creatDobErr)
+                    .addComponent(creatSemErr))
                 .addGap(165, 165, 165))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(backBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(signUpBtn)
-                .addGap(86, 86, 86))
+                .addGap(70, 70, 70))
         );
         kGradientPanel2Layout.setVerticalGroup(
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,25 +288,24 @@ public class CreateAccount extends javax.swing.JPanel {
                             .addComponent(creatContPErr, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                                .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(createPassBox, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(createShowPas))
+                            .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(createPassBox, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(creatPassErr, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(createShowPas)
+                .addGap(12, 12, 12)
                 .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                        .addComponent(creatDobErr, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
-                        .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(creatDOBChoose, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
-                        .addGap(116, 116, 116)))
+                    .addComponent(creatDobErr, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(creatDOBChoose, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(creatSemErr, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(createSemCombo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(70, 70, 70)
                 .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(signUpBtn)
                     .addComponent(backBtn))
@@ -302,16 +317,16 @@ public class CreateAccount extends javax.swing.JPanel {
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addGap(49, 49, 49)
                 .addComponent(kGradientPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(46, 46, 46))
+                .addGap(60, 60, 60))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap(63, Short.MAX_VALUE)
-                .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49))
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(kGradientPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(65, 65, 65))
         );
 
         javax.swing.GroupLayout titleBarLayout = new javax.swing.GroupLayout(titleBar);
@@ -401,6 +416,7 @@ public class CreateAccount extends javax.swing.JPanel {
         String contPhone = createContBox.getText();
         String pass = new String(createPassBox.getPassword());
         Date date = creatDOBChoose.getDate();
+        String sem=createSemCombo.getSelectedItem().toString();
         int count = 0;
         if (Validator.getInstance().isValidStr(name)) {
             creatNameErr.setVisible(false);
@@ -420,13 +436,8 @@ public class CreateAccount extends javax.swing.JPanel {
         } else {
             creatEmailErr.setVisible(true);
         }
-        if (Validator.getInstance().isValidContPhone(contPhone)) {
-            creatContPErr.setVisible(false);
-            count++;
-        } else {
-            creatContPErr.setVisible(true);
-        }
-        if (Validator.getInstance().isValidStr(pass)) {
+
+        if (Validator.getInstance().isValidPwd(pass)) {
             creatPassErr.setVisible(false);
             count++;
         } else {
@@ -438,6 +449,25 @@ public class CreateAccount extends javax.swing.JPanel {
             } else {
                 count++;
                 creatDobErr.setVisible(false);
+            }
+            if (Validator.getInstance().isValidRegNumber(contPhone)) {
+                creatContPErr.setVisible(false);
+                count++;
+            } else {
+                creatContPErr.setVisible(true);
+            }
+            if(Validator.getInstance().isValidSem(Integer.valueOf(sem))){
+                creatSemErr.setVisible(false);
+                count++;
+            }else{
+                creatSemErr.setVisible(true);
+            }
+        } else {
+            if (Validator.getInstance().isValidContPhone(contPhone)) {
+                creatContPErr.setVisible(false);
+                count++;
+            } else {
+                creatContPErr.setVisible(true);
             }
         }
         if (userType.equals("Teacher")) {
@@ -453,7 +483,7 @@ public class CreateAccount extends javax.swing.JPanel {
                 pt.setVisible(true);
             }
         } else if (userType.equals("Student")) {
-            if (count == 6) {
+            if (count == 7) {
                 Student st = new Student();
                 st.setName(name);
                 st.setFatherName(fname);
@@ -461,6 +491,7 @@ public class CreateAccount extends javax.swing.JPanel {
                 st.setRegNo(contPhone);
                 st.setPassword(pass);
                 st.setEmail(email);
+                st.setSem(sem);
                 RBE.getInstance().addtoList(st);
                 PromptMessage pt = new PromptMessage("Successfull! Account has been created", J, Jp);
                 pt.setVisible(true);
@@ -478,6 +509,10 @@ public class CreateAccount extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_createShowPasActionPerformed
 
+    private void kGradientPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel1MouseDragged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kGradientPanel1MouseDragged
+
     private void hideErrIcon() {
         creatContPErr.setVisible(false);
         creatEmailErr.setVisible(false);
@@ -485,6 +520,7 @@ public class CreateAccount extends javax.swing.JPanel {
         creatNameErr.setVisible(false);
         creatPassErr.setVisible(false);
         creatDobErr.setVisible(false);
+        creatSemErr.setVisible(false);
     }
 
     public void gotoP(JPanel mp) {
@@ -509,11 +545,13 @@ public class CreateAccount extends javax.swing.JPanel {
     private javax.swing.JLabel creatFNameErr;
     private javax.swing.JLabel creatNameErr;
     private javax.swing.JLabel creatPassErr;
+    private javax.swing.JLabel creatSemErr;
     private javax.swing.JTextField createContBox;
     private javax.swing.JTextField createEmailBox;
     private javax.swing.JTextField createFNameBox;
     private javax.swing.JTextField createNameBox;
     private javax.swing.JPasswordField createPassBox;
+    private javax.swing.JComboBox<String> createSemCombo;
     private javax.swing.JCheckBox createShowPas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -522,6 +560,7 @@ public class CreateAccount extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private keeptoo.KGradientPanel kGradientPanel1;
     private keeptoo.KGradientPanel kGradientPanel2;
     private javax.swing.JLabel maxi;

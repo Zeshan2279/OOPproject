@@ -40,7 +40,7 @@ public class Validator {
 
     public boolean isValidPwd(String str) {
         int len = str.length();
-        if (len > 1) {
+        if (len > 5) {
             for (int i = 0; i < len; i++) {
                 if (!(str.charAt(i) >= 'A' && str.charAt(i) <= 'Z')) {
                     if (!(str.charAt(i) >= 'a' && str.charAt(i) <= 'z')) {
@@ -137,5 +137,14 @@ public class Validator {
             return true;
         }
         return false;
+    }
+    public boolean isValidNumber(String n){
+        for(int i=0; i<n.length() ;i++)
+        {
+            if(!(n.charAt(i)>='0'&&n.charAt(i)<='9')){
+                return false;
+            }
+        }
+        return true;
     }
 }

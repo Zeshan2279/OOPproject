@@ -5,6 +5,7 @@
  */
 package rbe;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,12 +14,13 @@ import java.util.List;
  */
 public class Rubric {
 
-    private String criteria;
+    private String rubName;
     private int marks;
-    private List<RubricLevel> rubList;
+    private int levelWeight=0;
+    private List<RubricLevel> rubList=new ArrayList<RubricLevel>();
 
-    public String getCriteria() {
-        return criteria;
+    public String getRubName() {
+        return rubName;
     }
 
     public int getMarks() {
@@ -29,12 +31,13 @@ public class Rubric {
         return rubList;
     }
 
-    public void setCriteria(String c) {
-        criteria = c;
+    public void setRubName(String c) {
+        rubName = c;
     }
 
     public void addRubricLevel(RubricLevel rl) {
         rubList.add(rl);
+        updateLevelWeight();
     }
 
     public void removeRubricLevel(String levelName) {
@@ -53,4 +56,16 @@ public class Rubric {
         }
     }
 
+    public void updateLevelWeight(){
+        for(int i=0; i<rubList.size() ;i++)
+        {
+            levelWeight+=rubList.get(i).getPercentage();
+        }
+    }
+    public int isMoreLevelReq(){
+        if(levelWeight<100){
+            return 100-levelWeight;
+        }
+        return -1;
+    }
 }
